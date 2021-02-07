@@ -10,4 +10,16 @@
     <string name="menu_home">Menu</string>
     <string name="menu_gallery">Insertar</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="login_usuario">User</string>
+    <string name="login_pass">password</string>
+    <string name="login_cancel_button">Cancel</string>
+    <string name="login_ok_button">Sign In</string>
+    <string name="registro_nombre">Name</string>
+    <string name="registro_email">Email</string>
+    <string name="registro_te">Phone</string>
+    <string name="registro_guardar">Save</string>
+    <string name="regresar">Regresar</string>
+    <string name="registro_modificar">Edit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

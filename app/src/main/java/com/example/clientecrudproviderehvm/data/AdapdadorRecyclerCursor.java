@@ -2,6 +2,7 @@ package com.example.clientecrudproviderehvm.data;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,8 @@ public class AdapdadorRecyclerCursor extends RecyclerView.Adapter <AdapdadorRecy
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
           View layoutItem =
                   layoutInflater.inflate(android.R.layout.simple_list_item_2,null);
-
+            layoutItem.setOnClickListener(this.onClickListener);
+            layoutItem.setOnLongClickListener(this.onLongClickListener);
         return new ViewHolder(layoutItem);
     }
     @Override
