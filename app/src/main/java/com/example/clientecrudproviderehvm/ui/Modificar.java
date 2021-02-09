@@ -37,6 +37,7 @@ public class Modificar extends AppCompatActivity {
         txtEmail=findViewById(R.id.txtEmail);
         txtTel=findViewById(R.id.txtTel);
         btnAceptar=findViewById(R.id.btnGuardar);
+        btnCancelar=findViewById(R.id.btnCancelar);
         consultar();
                 txtNombre.setText(cursor.getString(cursor.getColumnIndex("nombre")));
                 txtEmail.setText(cursor.getString(cursor.getColumnIndex("email")));

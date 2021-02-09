@@ -27,6 +27,7 @@ public class GalleryFragment extends Fragment {
     private GalleryViewModel galleryViewModel;
 
     Button btnAceptar;
+    Button btnCancelar;
     TextView txtNombre;
     TextView txtPass;
     TextView txtEmail;
@@ -39,6 +40,7 @@ public class GalleryFragment extends Fragment {
                 new ViewModelProvider(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         btnAceptar=root.findViewById(R.id.btnGuardar);
+        btnCancelar=root.findViewById(R.id.btnCancelar);
         txtNombre = (TextView) root.findViewById(R.id.txtNombre);
         txtPass = (TextView) root.findViewById(R.id.txtPassword);
         txtEmail = (TextView) root.findViewById(R.id.txtEmail);
@@ -46,15 +48,17 @@ public class GalleryFragment extends Fragment {
 
         ContentResolver cr=getContext().getContentResolver();
         ContentValues cv=new ContentValues();
+        btnCancelar.setOnClickListener(l->{
+            getActivity().onBackPressed();
+        });
         btnAceptar.setOnClickListener(l->{
             cv.put(MiProveedorContenidoContract.Usuarios.NOMBRE,txtNombre.getText().toString());
             cv.put(MiProveedorContenidoContract.Usuarios.PASS,txtPass.getText().toString());
             cv.put(MiProveedorContenidoContract.Usuarios.EMAIL,txtEmail.getText().toString());
             cv.put(MiProveedorContenidoContract.Usuarios.TELEFONO,txtTel.getText().toString());
             Uri resultado=cr.insert(MiProveedorContenidoContract.Usuarios.CONTENT_URI,cv);
-
-
-        });
+            getActivity().onBackPressed();
+        } );
         return root;
     }
 }
